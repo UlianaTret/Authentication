@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "2d2b6263-a8c8-45ba-8cd2-84b07266cf01",
+		"name": "realWorld",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7771871"
+	},
+	"item": [
+		{
+			"name": "регистрация",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user\": {\r\n    \"username\": \"jakeTest\",\r\n    \"email\": \"jakeTest@jake.jake\",\r\n    \"password\": \"jakePasswordTest\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.realworld.io/api/users",
+					"protocol": "https",
+					"host": [
+						"api",
+						"realworld",
+						"io"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "логин",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user\": {\r\n    \"email\": \"jakeTest@jake.jake\",\r\n    \"password\": \"jakePasswordTest\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.realworld.io/api/users/login",
+					"protocol": "https",
+					"host": [
+						"api",
+						"realworld",
+						"io"
+					],
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "данные о юзере",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyNjAzNn0sImlhdCI6MTcxNjk4ODI1MiwiZXhwIjoxNzIyMTcyMjUyfQ.pSfvEnug4sOodi0rgHyvXGu_-ffeABEGNpez7JY5_OQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "$API_KEY"
+					}
+				],
+				"url": {
+					"raw": "https://api.realworld.io/api/user",
+					"protocol": "https",
+					"host": [
+						"api",
+						"realworld",
+						"io"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
